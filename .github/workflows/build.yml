@@ -57,6 +57,7 @@ jobs:
 #             -B./cmake-build
 
       - name: cmake Build
+        if: ${{ matrix.container == 'ubuntu-latest' }}
         run: |
           cd cmake-build
           cmake --build . --config ${{ matrix.build_type }}
